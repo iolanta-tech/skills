@@ -20,9 +20,12 @@ rdfs:comment: |
 instances:
   - $id: wd:Q188639
     skos:related: wd:Q379598
-  - "wd:Q1135301"
+    skos:prefLabel: SATA
+  - $id: wd:Q1135301
+    skos:prefLabel: SAS
   - $id: wd:Q17157198
     skos:related: wd:Q206924
+    skos:prefLabel: NVMe
 ---
 
 # SSD host protocol classification
