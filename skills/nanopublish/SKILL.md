@@ -12,8 +12,8 @@ Use this skill when the user wants to publish a nanopublication from a Markdown 
 The main argument is a Markdown file path. The RDF assertion is expected in YAML-LD frontmatter.
 
 Examples:
-- `publications/types-of-ssds/interface-scheme/index.md`
-- `/home/anatoly/projects/nanopublishing/publications/foo/index.md`
+- `docs/examples/types-of-ssds/interface-scheme/index.md`
+- `/home/anatoly/projects/nanopublishing/docs/examples/foo/index.md`
 
 ## Commands
 
