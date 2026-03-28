@@ -1,0 +1,50 @@
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix npx: <http://purl.org/nanopub/x/> .
+@prefix orcid: <https://orcid.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sub: <https://w3id.org/np/RA0y8w3PgBc8vJqF2lRVd4d318s84SA_jHa_8BQ2bOEfc/> .
+@prefix this: <https://w3id.org/np/RA0y8w3PgBc8vJqF2lRVd4d318s84SA_jHa_8BQ2bOEfc> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sub:Head {
+    this: a np:Nanopublication ;
+        np:hasAssertion sub:assertion ;
+        np:hasProvenance sub:provenance ;
+        np:hasPublicationInfo sub:pubinfo .
+}
+
+sub:assertion {
+    <http://www.wikidata.org/entity/Q1135301> a <https://example.org/SSDHostProtocol> ;
+        skos:prefLabel "SAS"@en .
+
+    <http://www.wikidata.org/entity/Q17157198> a <https://example.org/SSDHostProtocol> ;
+        skos:prefLabel "NVMe"@en ;
+        skos:related <http://www.wikidata.org/entity/Q206924> .
+
+    <http://www.wikidata.org/entity/Q188639> a <https://example.org/SSDHostProtocol> ;
+        skos:prefLabel "SATA"@en ;
+        skos:related <http://www.wikidata.org/entity/Q379598> .
+
+    <https://example.org/SSDHostProtocol> a owl:Class ;
+        rdfs:label "SSD host protocol"@en ;
+        rdfs:comment "Protocol through which a solid-state drive (SSD) communicates with its host"@en .
+}
+
+sub:provenance {
+    sub:assertion prov:generatedAtTime "2026-03-25T22:23:43.865319"^^xsd:dateTime .
+}
+
+sub:pubinfo {
+    sub:sig npx:hasAlgorithm "RSA" ;
+        npx:hasPublicKey "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA79G1aksiLFmT7Lco5+qLImUeO0Dfli7k1R76QYoVtuMV0w4fQdv9oLXGGpLZ7U25pH7j2UHKk2R/4LSwoZCeMvIdbSfLpxTOSjD9scUiJWjwPHLH7/e946ENlhi52GANdYMGa+FxEQGR9HiHIoYn99AYUcYqkJ7qeOgXMJdkL6vZACdzeepAGajgC/jiscJuxmBtWCoqqi0GnG0AIXq14E9VgscSMLZ63i30mKDWwSZF1FFBLUHDSV+CLaFKBfjsGzVVU85jlYSWJ2E0FJ+w0cRnNB3B2bmPI7miy7okzQIqagEHop4bbaPmbgG5uMX2lMgb6RX0oU5hqU4B8FwHUwIDAQAB" ;
+        npx:hasSignature "AhxLScqmRLxz0ovfG+CbE8niuBFQDaJ6TAiE5nSGSEf4Js7EcQBU2rTTfyvpsYwl6dK9to9ICsVWcSGQyBXY82PNN5ApBGhfwLrXY6ucJ6wJpEACODcGy/m01nUZV2HukzRnRxVR1OmRUeFd+rsDur8oTL5CUjBcGf9/EkTZWT9dPP5wmVuJIuEXS+i6U3j142/WkaQv5vLhMxnICoEA2rRw4fhQaJ7FdwW2OtV4cXsEUzULMv997Dvx2xHdt2VV3Vj9ZwqijGsWC/Am4YWjQPEsIDAwxbuDviYTK7l8ZCO4WxvPS/nCCDvWrdWFT2AtZvUTlsLf/K/ka0jWpu99nA==" ;
+        npx:hasSignatureTarget this: ;
+        npx:signedBy orcid:0009-0001-8740-4213 .
+
+    this: prov:generatedAtTime "2026-03-25T22:23:43.865319"^^xsd:dateTime ;
+        prov:wasAttributedTo orcid:0009-0001-8740-4213 .
+}
+
