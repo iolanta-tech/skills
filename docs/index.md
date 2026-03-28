@@ -6,25 +6,19 @@ hide:
   - toc
 ---
 
-# nanopublishing
-
-<p class="site-subtitle">A coding-agent workflow for nanopublications</p>
-
-This repository is a working nanopublishing workflow for coding agents.
-Here is what using it looks like in one small end-to-end session.
+# nanopublishing <small>with coding agents and <code>iolanta</code></small>
 
 ## Installation
 
 Install all skills from this repository into the current project for your agent of choice:
 
-```bash
-npx skills add https://github.com/iolanta-tech/nanopublishing \
-  --skill '*' \
-  -a claude-code
+```bash title="Install"
+npx skills add https://github.com/iolanta-tech/nanopublishing --skill '*' -a claude-code # (1)!
 ```
 
-Replace `claude-code` with `codex` or `cursor`.
-Add `-g` if you want a global install instead of a project-local one.
+1. Some valid agent values include: `claude-code`, `codex`, `cursor`, and [others](https://github.com/vercel-labs/skills#supported-agents).
+
+Add <code>-g</code> if you want a global install instead of a project-local one.
 
 ## Example session
 
