@@ -12,6 +12,8 @@
       "@type": "@id"
     "skos:related":
       "@type": "@id"
+    this: http://purl.org/nanopub/temp/np/
+$id: this:SSDHostProtocol
 $type: owl:Class
 rdfs:label: SSD host protocol
 rdfs:comment: Protocol through which a solid-state drive (SSD) communicates with its host
