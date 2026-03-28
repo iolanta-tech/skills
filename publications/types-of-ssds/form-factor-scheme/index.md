@@ -1,26 +1,31 @@
 ---
 "@context":
-  wd: "https://www.wikidata.org/entity/"
-  schema: "https://schema.org/"
-  skos: "http://www.w3.org/2004/02/skos/core#"
-  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
-  rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-"@included":
-  - "@id": "#formFactorScheme"
-    "@type": "schema:CreativeWork"
-    "schema:name":
-      "@value": "SSD form factor classification"
-      "@language": "en"
-    "schema:about":
-      - "@id": "wd:Q65037415"
-      - "@id": "wd:Q15528609"
-      - "@id": "wd:Q64538905"
-      - "@id": "wd:Q65034999"
-      - "@id": "wd:Q216158"
-  - "@id": "wd:Q15528609"
+  - https://json-ld.org/contexts/dollar-convenience.jsonld
+  - "@language": en
+    wd: https://www.wikidata.org/entity/
+    skos: http://www.w3.org/2004/02/skos/core#
+    rdfs: http://www.w3.org/2000/01/rdf-schema#
+    rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    owl: http://www.w3.org/2002/07/owl#
+    instances:
+      "@reverse": rdf:type
+      "@type": "@id"
     "skos:related":
-      - "@id": "wd:Q188639"
-      - "@id": "wd:Q17157198"
+      "@type": "@id"
+    this: http://purl.org/nanopub/temp/np/
+$id: this:SSDFormFactor
+$type: owl:Class
+rdfs:label: SSD form factor
+rdfs:comment: Physical package or connector form in which a solid-state drive is implemented
+instances:
+  - $id: wd:Q15528609
+    skos:related:
+      - wd:Q188639
+      - wd:Q17157198
+  - wd:Q64538905
+  - wd:Q65034999
+  - wd:Q216158
+  - wd:Q65037415
 ---
 
 # SSD form factor scheme
