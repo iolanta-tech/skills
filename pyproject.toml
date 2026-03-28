@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nanopublishing-site"
+version = "0.1.0"
+description = "Documentation site and development commands for the nanopublishing repository."
+readme = "docs/index.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jeeves-shell",
+    "mkdocs>=1.6",
+    "mkdocs-awesome-pages-plugin>=2.9.2",
+    "pymdown-extensions>=10.0",
+    "pygments>=2.18",
+    "sh>=2.0",
+]
+
+[tool.setuptools]
+packages = []
