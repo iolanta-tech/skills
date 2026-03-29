@@ -64,19 +64,57 @@ This skill is **not** for creating a standalone `.ttl` file from scratch.
 - `R13` If you use a full URL for a referenced resource and it appears in object position, add a labeled node for that same `@id` when Iolanta needs a human-readable label.
 - `R14` Be cautious with Wikidata predicates and other external predicates that may render poorly in Iolanta. Prefer clearer public predicates when available; otherwise expect that rendering may be worse than syntactic validity.
 
-## Validation commands
+## Validation setup and failure handling
+
+Validation commands:
 
 ```bash
 pyld expand path/to/file.md
-```
-
-Use this to confirm the frontmatter expands as JSON-LD.
-
-```bash
 iolanta path/to/file.md --as kglint/json
 ```
 
-Use this to inspect how Iolanta materializes and labels the graph. Read the full output, not just `assertions`.
+Use `pyld expand` to confirm the frontmatter expands as JSON-LD. Use `iolanta ... --as kglint/json` to inspect how Iolanta materializes and labels the graph. Read the full output, not just `assertions`.
+
+Only if one of those commands fails because the tool is missing or unavailable, report the setup issue clearly and recommend installing `iolanta`:
+
+```bash
+python3 -m pip install --user iolanta
+```
+
+Important package notes:
+
+- the `pyld` CLI used by this skill comes from `yaml-ld`
+- `PyLD` is the Python library, not the CLI command this skill uses
+- `iolanta` is installed from the separate `iolanta` package
+- installing `iolanta` should also install the `pyld` CLI transitively via its `yaml-ld` dependency
+- `yaml-ld` and `iolanta` require network access and writable cache/state directories in practice
+
+This installs the commands into the user's Python environment outside a virtualenv. If the user is working inside an active virtualenv, recommend installing there instead:
+
+```bash
+python3 -m pip install iolanta
+```
+
+Concrete fallback command set:
+
+```bash
+python3 -m pip install --user iolanta
+```
+
+Distinguish failure modes explicitly:
+
+- `command not found`
+  - the tool is not installed or not on `PATH`
+- `installed but not on PATH`
+  - report that the commands may have been installed into a Python user or virtual environment that the current shell is not using
+- cache/state directory not writable
+  - report it as an environment or sandbox problem
+- network or context-resolution failure
+  - report it as an environment or sandbox problem
+- long-running `iolanta`
+  - use a long timeout; no output yet is not by itself an error
+
+If `pyld expand` succeeds and `iolanta` fails, report the distinction clearly and explain whether the failure looks like PATH/setup, cache/state, network, timeout, or Iolanta-specific graph rendering.
 
 ## Iolanta discipline
 
@@ -100,7 +138,6 @@ If `assertions` is non-empty:
 
 ## Notes
 
-- A file can be valid linked-data frontmatter under `pyld expand` and still fail in Iolanta. Report that distinction clearly.
 - Iolanta loads the containing directory, so sibling RDF content may affect validation results.
 - Prefer incremental edits over replacing a whole frontmatter block unless the existing one is clearly unsalvageable.
 - This skill intentionally covers Markdown frontmatter workflows only. It does not replace standalone `.ttl` creation.
