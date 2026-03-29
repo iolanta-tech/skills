@@ -22,6 +22,29 @@ Add <code>-g</code> if you want a global install instead of a project-local one.
 
 ## Example session
 
+=== ":simple-claude: Claude Code"
+
+    ```bash
+    claude
+    ```
+
+=== ":fontawesome-brands-openai: Codex"
+
+    ```bash
+    codex --full-auto # (1)!
+    ```
+
+    1. Codex needs `--full-auto` here to permit access to cache directories.
+
+=== ":simple-cursor: Cursor"
+
+    ```bash
+    cursor-agent # (1)!
+    ```
+
+    1. Or just use chat in Cursor IDE.
+
+
 <div class="session-step" markdown="1">
 <div markdown="1">
 <div class="chat-block user">
