@@ -118,6 +118,12 @@ Add <code>-g</code> if you want a global install instead of a project-local one.
 
 [Open nanopublication](https://w3id.org/np/RAMIHkOctLsK2ZlbWS0gr0kz9wFffP0fHSIN-N_aKrgC8){ .md-button .md-button--primary }
 
+### Visualization
+
+```mermaid
+{{ (docs / 'examples/types-of-ssds/interface-to-form-factor-mapping/index.md') | as('mermaid') }}
+```
+
 [See the full example](examples/types-of-ssds/interface-to-form-factor-mapping/index.md){ .md-button }
 
 </div>
